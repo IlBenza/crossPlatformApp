@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IONIC 2</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>   
+</head>
+<body>
+    <!-- Tag principale deve essere solo uno per app-->
+    <ion-app>
+        <ion-header translucent>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-button>
+                        <ion-icon slot="icon-only" name="logo-apple"></ion-icon>
+                    </ion-button>
+                </ion-buttons> 
+                <ion-title>Searchbar</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button>
+                        <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+                    </ion-button>
+                </ion-buttons> 
+            </ion-toolbar>
+            <ion-toolbar>
+                <ion-searchbar>
+                    <!--  //  -->
+                </ion-searchbar>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content fullscreen>
+            <ion-list>
+                <ion-item>Amsterdam</ion-item>
+                <ion-item>Rome</ion-item>
+                <ion-item>New York</ion-item>
+                <ion-item>Cairo</ion-item>
+                <ion-item>Buenos Aires</ion-item>
+                <ion-item>Paris</ion-item>
+                <ion-item>Madrid</ion-item>
+                <ion-item>San Paulo</ion-item>
+                <ion-item>London</ion-item>
+                <ion-item>Washington</ion-item>
+                <ion-item>Tokyo</ion-item>
+                <ion-item>Hong Kong</ion-item>
+                <ion-item>Sidney</ion-item>
+                <ion-item>Melbourne</ion-item>
+                <ion-item>Kala Lampur</ion-item>
+                <ion-item>Mexico city</ion-item>
+                <ion-item>Berlin</ion-item>
+                <ion-item>Moskow</ion-item>
+                <ion-item>San Francisco</ion-item>
+                <ion-item>Bogota</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-app>
+    <script>
+        const searchbar = document.querySelector('ion-searchbar');
+        const items = Array.from(document.querySelector('ion-list').children);
+        searchbar.addEventListener('ionInput', handleInput);
+        function handleInput(event) {
+          const query = event.target.value.toLowerCase();
+          requestAnimationFrame(() => {
+            items.forEach(item => {
+              const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+              item.style.display = shouldShow ? 'block' : 'none';
+            });
+          });
+        }
+      </script>
+    </body>
+</html>
