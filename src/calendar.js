@@ -1,6 +1,10 @@
-const test = 5+2
+const calendarData = document.querySelector('#calendar-data')
 
 module.exports = {
     name: 'Calendar',
-    test: test
+    version: "0.1",
+    dom: calendarData,
+    run: function(){
+        console.log("Ciao")
+    }
 }
