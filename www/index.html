@@ -12,7 +12,7 @@
 <body>
   <ion-app>
     <ion-tabs>
-        <ion-tab tab="calendar">
+        <ion-tab tab="calendar" class="calendar">
             <ion-header translucent>
                 <ion-toolbar color="primary">
                     <ion-title>Schedule</ion-title>
@@ -27,13 +27,62 @@
             </ion-content>
         </ion-tab>
         <ion-tab tab="speakers">
-            <h1>Speakers</h1>
+            <ion-header translucent>
+                <ion-toolbar color="secondary">
+                    <ion-title>Speakers</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                 <ion-list id="speakers-data">
+                        
+                    <!-- fa nel javascript -->
+ 
+                </ion-list>
+            </ion-content>
         </ion-tab>
         <ion-tab tab="map">
-            <h1>Map</h1>
+            <ion-header>
+                <ion-toolbar color="tertiary">
+                    <ion-title>Map</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+              <div id="map-data"></div>
+            </ion-content>
         </ion-tab>
         <ion-tab tab="info">
-            <h1>Information</h1>
+            <ion-header>
+                <ion-toolbar color="warning">
+                    <ion-title>Information</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <div class="about-header">
+                    <img src="https://www.units.it/sites/default/files/styles/slideshow_1170x425/public/media/immagini/notizie/trieste10.jpg?itok=xm54wuX_" alt="panorama trieste"/>
+                </div>
+                <div class="about-info">
+                    <h4 class="ion-padding-start">ESOF 2020</h4>
+                    <ion-list lines="none">
+                        <ion-item>
+                            <ion-icon name="calendar"></ion-icon>
+                            <ion-label>Date</ion-label>
+                            <ion-datetime display-format="DD/MM/YYYY" value="2020-0-11"></ion-datetime>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon name="pin"></ion-icon>
+                            <ion-label>Location</ion-label>
+                            Trieste, Italy
+                        </ion-item>
+                    </ion-list>
+                    <p>
+                        The Science in the City Festival is an important feature of every 
+                        Euroscience Open Forum dedicated to people of all ages who are curious 
+                        about science and technology. It is one of the largest public 
+                        engagement in science and technology events in Europe taking place from
+                        27 June until 11 July 2020. 
+                    </p>
+                </div>
+            </ion-content>
         </ion-tab>
         <ion-tab-bar slot="bottom">
             <ion-tab-button tab="calendar">
