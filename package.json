@@ -14,7 +14,7 @@
     "develop": "webpack --watch",
     "start:dev": "webpack-dev-server",
     "build": "webpack --mode production",
-    "eseguire": "npm run start:dev"
+    "ionic:build": "npm run build"
   },
   "repository": {
     "type": "git",
