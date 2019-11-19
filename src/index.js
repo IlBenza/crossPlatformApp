@@ -49,6 +49,5 @@ ${oggettoSpeakers.map(item => `
 
 //Map
 const MyMap = require('./map.js')
-
 MyMap.render()
     
